@@ -10,6 +10,8 @@ This standalone example recreates that case with one synthetic cast and an integ
 | 1,500,000 µs | 1 | 4.5 | 90 |
 | 1,500,001 µs | 1 | 4.5 | 90 |
 
+The test passes each resolution timestamp directly to `resolve_cast` to check when the penalty starts. The 1.5-second onset is a setting for this synthetic fixture. A full combat-engine test would start the cast before overtime and let it resolve on the onset tick. That would catch a bug where the engine uses the stack from the start of the cast.
+
 ## Run the regression
 
 From this directory, run the following with Python 3.13. The example uses only the standard library.
